@@ -1,7 +1,7 @@
 #include<opencv2/opencv.hpp>
 
 
-//定义Gamma函数
+//定义Gamma函数（有参考过一些网上找的代码）
 void Gamma(cv::Mat& src, cv::Mat& dst, float K)
 {
 	uchar LUT[256];
@@ -36,15 +36,16 @@ void Gamma(cv::Mat& src, cv::Mat& dst, float K)
 
 }
 
-int main() {
+int main() 
+{
 
 	cv::Mat src = cv::imread("E:\\PIC\\gtest.jpg");
 	cv::Mat dst;
 
-	Gamma(src, dst,0.5); //进行Gamma变换
+	Gamma(src,dst,0.5); //进行Gamma变换
 
 	imshow("src", src);
 	imshow("dst", dst);
-    waitKey(0);
+	cv::waitKey(0);
 }
    
